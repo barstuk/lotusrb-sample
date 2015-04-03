@@ -5,7 +5,9 @@ require 'pry'
 
 require_relative '../lib/sampleapp'
 require_relative '../apps/web/application'
+require_relative '../apps/another/application'
 
 Lotus::Container.configure do
-  mount Web::Application, at: '/'
+  mount Web::Application, at: '/web'
+  mount Another::Application, at: '/another'
 end
