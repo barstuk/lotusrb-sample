@@ -3,8 +3,8 @@ module Web::Controllers::Home
     include Web::Action
 
     def call(params)
-      user = User.new(name: "p;d")
-      UserRepository.create(user)
+      task = Task.new(name: "new")
+      TaskRepository.create(task)
     end
   end
 end

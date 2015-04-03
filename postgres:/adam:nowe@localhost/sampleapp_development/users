@@ -1,0 +1,3 @@
+o:/Lotus::Model::Adapters::Memory::Collection	:@identity:id:
+@name:
+users:@records{i{:	nameI"new:ET;ii{;I"new;T;i:@primary_keyo:;Lotus::Model::Adapters::Memory::Collection::PrimaryKey:@currenti
