@@ -1,0 +1,4 @@
+o:/Lotus::Model::Adapters::Memory::Collection	:@identity:id:
+@name:
+posts:@records{i{:
+titleI"new:ET:contentI"my first post!;T;i:@primary_keyo:;Lotus::Model::Adapters::Memory::Collection::PrimaryKey:@currenti

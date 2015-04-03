@@ -1,5 +1,5 @@
 require 'lotus/model'
 
-class TaskRepository
+class PostRepository
   include Lotus::Repository
 end

@@ -1,7 +1,7 @@
 require 'lotus/helpers'
 require "pry"
 
-module Another
+module PostsApp
   class Application < Lotus::Application
     configure do
       ##
@@ -94,7 +94,7 @@ module Another
       #                         'postgres://localhost/bookshelf'
       #                         'mysql://localhost/bookshelf'
       #
-      adapter type: :file_system, uri: ENV['ANOTHER_DATABASE_URL']
+      adapter type: :file_system, uri: ENV['POSTSAPP_DATABASE_URL']
 
       # adapter type: :file_system, uri: ENV['WEB_DATABASE_URL']
 

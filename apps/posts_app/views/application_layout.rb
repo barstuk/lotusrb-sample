@@ -1,7 +1,7 @@
-module Another
+module PostsApp
   module Views
     class ApplicationLayout
-      include Another::Layout
+      include PostsApp::Layout
     end
   end
 end

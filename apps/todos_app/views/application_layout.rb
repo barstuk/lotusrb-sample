@@ -1,7 +1,7 @@
-module Web
+module TodosApp
   module Views
     class ApplicationLayout
-      include Web::Layout
+      include TodosApp::Layout
     end
   end
 end
