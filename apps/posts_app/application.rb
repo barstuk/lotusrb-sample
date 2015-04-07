@@ -122,14 +122,17 @@ module PostsApp
       # Specify sources for assets
       # The directory `public/` is added by default
       #
-      # assets << [
-      #   'vendor/javascripts'
-      # ]
+      assets << [
+        'public/',
+        'vendor/assets'
+      ]
 
       # Enabling serving assets
       # Defaults to false
       #
-      # serve_assets false
+      serve_assets true
+
+
 
       ##
       # SECURITY

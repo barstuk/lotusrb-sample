@@ -1,2 +1,10 @@
 <h1>Welcome to Lotus!</h1>
-<h3>This template is rendered by <code>Web::Views::Home::Index</code> and it's available at: <code>apps/web/templates/home/index.html.erb</code></h3>
+<% posts.each do |post| %>
+  <%= post.title %><br>
+<% end %>
+<button type="button" class="btn btn-success">Success</button>
+<form action="posts_app" method="post">
+  Title: <input type="text" name="title"><br>
+  Content: <input type="text" name="content"><br>
+  <%= button_to("post", "Create new Post") %>
+</form>

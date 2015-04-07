@@ -7,7 +7,6 @@ gem 'lotusrb',       '0.3.0'
 gem 'lotus-model',   '~> 0.3'
 gem 'pg'
 gem 'lotus-postgres', '~> 0.1.0'
-
 group :test do
   gem 'minitest'
   gem 'capybara'

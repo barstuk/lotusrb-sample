@@ -2,9 +2,10 @@ module PostsApp::Controllers::Home
   class Index
     include PostsApp::Action
 
+    expose(:posts)
+
     def call(params)
-      post = Post.new(title: "new", content: "my first post!")
-      PostRepository.create(post)
+      @posts = PostRepository.all
     end
   end
 end

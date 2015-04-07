@@ -1,4 +1,8 @@
+require 'lotus/validations'
+
 class Post
   include Lotus::Entity
-  attributes :title, :content
+  include Lotus::Validations
+  attribute :title, presence: true
+  attribute :content
 end
