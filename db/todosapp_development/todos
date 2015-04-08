@@ -1,5 +1,0 @@
-o:/Lotus::Model::Adapters::Memory::Collection	:@identity:id:
-@name:
-todos:@records{i{:	nameI"my first todo!:ET;ii{;I"my first todo!;T;ii{;I"my first todo!;T;ii	{;I"my first todo!;T;i	i
-{;I"my first todo!;T;i
-i{;I"my first todo!;T:	doneT;ii{;I"my first todo!;T;T;ii{;I"my first todo!;T;i:@primary_keyo:;Lotus::Model::Adapters::Memory::Collection::PrimaryKey:@currenti

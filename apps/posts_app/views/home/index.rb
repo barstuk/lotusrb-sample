@@ -5,7 +5,7 @@ module PostsApp::Views::Home
     include Lotus::Helpers::HtmlHelper
 
     def button_to(method, title)
-      raw %(<button type="submit" formmethod=#{method}>#{title}</button>)
+      raw %(<button type="submit" class="btn btn-primary" formmethod=#{method}>#{title}</button>)
     end
   end
 end

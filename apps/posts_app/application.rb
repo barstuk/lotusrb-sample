@@ -94,7 +94,7 @@ module PostsApp
       #                         'postgres://localhost/bookshelf'
       #                         'mysql://localhost/bookshelf'
       #
-      adapter type: :file_system, uri: ENV['POSTSAPP_DATABASE_URL']
+      adapter type: :sql, uri: ENV['POSTSAPP_DATABASE_URL']
 
       # adapter type: :file_system, uri: ENV['WEB_DATABASE_URL']
 
@@ -123,16 +123,13 @@ module PostsApp
       # The directory `public/` is added by default
       #
       assets << [
-        'public/',
-        'vendor/assets'
+        'public/'
       ]
 
       # Enabling serving assets
       # Defaults to false
       #
       serve_assets true
-
-
 
       ##
       # SECURITY

@@ -94,7 +94,7 @@ module TodosApp
       #                         'postgres://localhost/bookshelf'
       #                         'mysql://localhost/bookshelf'
       #
-      adapter type: :file_system, uri: ENV['TODOSAPP_DATABASE_URL']
+      adapter type: :sql, uri: ENV['TODOSAPP_DATABASE_URL']
 
       # adapter type: :file_system, uri: ENV['WEB_DATABASE_URL']
 

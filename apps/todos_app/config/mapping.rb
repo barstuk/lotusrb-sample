@@ -4,5 +4,7 @@ collection :todos do
 
   attribute :id,   Integer
   attribute :name, String
-  attribute :done, Boolean, :default => true
+  attribute :done, Boolean
+  attribute :created_at, DateTime
+  attribute :updated_at, DateTime
 end
