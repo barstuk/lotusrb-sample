@@ -1,5 +1,8 @@
+require 'lotus/validations'
+
 class Todo
   include Lotus::Entity
-  attributes :name, presence: true
+  include Lotus::Validations
+  attribute :name, presence: :true
   attributes :done, :created_at, :updated_at
 end

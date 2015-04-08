@@ -1,8 +1,12 @@
+require 'lotus/validations'
+
 class User
   include Lotus::Entity
+  include Lotus::Validations
 
-  attribute :name, :email, presence: true
-  attribute :admin, :created_at, :updated_at
+  attribute :name, presence: true
+  attribute :email, presence: true
+  attributes :admin, :created_at, :updated_at, :password_digest, :remember_token
 
   def admin?
     admin == true
