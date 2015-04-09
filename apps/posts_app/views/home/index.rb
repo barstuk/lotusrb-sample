@@ -3,7 +3,7 @@ require 'lotus/action/session'
 module PostsApp::Views::Home
   class Index
     include PostsApp::View
-    include PostsApp::Authenticable
+    include SampleApp::Authenticable
     include Lotus::Helpers
     include Lotus::Helpers::HtmlHelper
     include Lotus::Action::Session

@@ -6,8 +6,7 @@
   <link rel="stylesheet" href="posts_app/stylesheets/bootstrap.min.css">
 </head>
 <body>
-<%= logged_user.name if logged_user %>
-
+<%= logged_user.name if signed_in %>
   <%= yield %>
 </body>
 </html>

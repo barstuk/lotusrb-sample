@@ -1,9 +1,11 @@
 <h1>Welcome to Lotus Posts App!</h1>
 
+<% if signed_in %>
 <% posts.each do |post| %>
 <%= post.title %><br>
 <% end %>
 <br>
+
 <form role="form" action="posts_app" method="post" >
  <div class="form-group">
    Title:
@@ -18,7 +20,12 @@
 </form>
 
 
+<form role="form" action="posts_app/logout" method="get" >
+  <%= button_to("get", "Logout") %>
+</form>
 
+
+<% else %>
 <form role="form" action="posts_app/sign_up" method="post" >
  <div class="form-group">
    Email:
@@ -35,3 +42,18 @@
 <%= button_to("post", "Sign up") %>
 </div>
 </form>
+
+
+<form role="form" action="posts_app/login" method="post" >
+ <div class="form-group">
+   Email:
+   <input type="text" name="email">
+ </div>
+ <div class="form-group">
+  Password:
+  <input type="password" name="password" >
+</div>
+<%= button_to("post", "Log in") %>
+</div>
+</form>
+<% end %>

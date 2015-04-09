@@ -1,9 +1,9 @@
 require 'lotus/action/session'
 
-module PostsApp::Controllers::Sessions
+module TodosApp::Controllers::Sessions
   class Login
     include Lotus::Controller
-    include PostsApp::Action
+    include TodosApp::Action
     include Lotus::Action::Session
 
     def call(params)
@@ -11,25 +11,25 @@ module PostsApp::Controllers::Sessions
       if user.password == params[:password]
         session[:user] = user.remember_token
       end
-      redirect_to '/posts_app'
+      redirect_to '/todos_app'
     end
   end
 
   class Logout
     include Lotus::Controller
-    include PostsApp::Action
+    include TodosApp::Action
     include Lotus::Action::Session
 
     def call(params)
       session[:user] = nil
-      redirect_to '/posts_app'
+      redirect_to '/todos_app'
     end
   end
 
   class Signup
     include SampleApp::Authenticable
     include Lotus::Controller
-    include PostsApp::Action
+    include TodosApp::Action
     include Lotus::Action::Session
 
     def call(params)
@@ -38,10 +38,10 @@ module PostsApp::Controllers::Sessions
       if user.valid?
         UserRepository.create(user)
         session[:user] = UserRepository.find_by_email(params[:email]).remember_token
-        return redirect_to '/posts_app'
+        return redirect_to '/todos_app'
       end
     rescue Sequel::UniqueConstraintViolation
-      redirect_to '/posts_app'
+      redirect_to '/todos_app'
     end
   end
 end

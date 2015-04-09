@@ -1,2 +1,59 @@
-<h1>Welcome to Lotus!</h1>
-<h3>This template is rendered by <code>Web::Views::Home::Index</code> and it's available at: <code>apps/web/templates/home/index.html.erb</code></h3>
+<h1>Welcome to Lotus Todo App!</h1>
+
+<% if signed_in %>
+<% todos.each do |todo| %>
+<%= todo.name %><br>
+<% end %>
+<br>
+
+<form role="form" action="todos_app" method="post" >
+ <div class="form-group">
+   Name:
+   <input type="text" name="name">
+ </div>
+ <div class="form-group">
+   Category:
+   <input type="text" name="category">
+ </div>
+ <%= button_to("post", "Create new Todo") %>
+</div>
+</form>
+
+
+<form role="form" action="todos_app/logout" method="get" >
+  <%= button_to("get", "Logout") %>
+</form>
+
+
+<% else %>
+<form role="form" action="todos_app/sign_up" method="post" >
+ <div class="form-group">
+   Email:
+   <input type="text" name="email">
+ </div>
+ <div class="form-group">
+   Name:
+   <input type="text" name="name">
+ </div>
+ <div class="form-group">
+  Password:
+  <input type="password" name="password" >
+</div>
+<%= button_to("post", "Sign up") %>
+</div>
+</form>
+
+
+<form role="form" action="todos_app/login" method="post" >
+ <div class="form-group">
+   Email:
+   <input type="text" name="email">
+ </div>
+ <div class="form-group">
+  Password:
+  <input type="password" name="password" >
+</div>
+<%= button_to("post", "Log in") %>
+</div>
+</form>
+<% end %>

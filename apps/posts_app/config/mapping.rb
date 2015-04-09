@@ -7,4 +7,5 @@ collection :posts do
   attribute :content, String
   attribute :created_at, DateTime
   attribute :updated_at, DateTime
+  attribute :user_id, Integer
 end

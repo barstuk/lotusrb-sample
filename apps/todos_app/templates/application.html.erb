@@ -1,9 +1,12 @@
 <!doctype HTML>
 <html>
-  <head>
-    <title>Web</title>
-  </head>
-  <body>
-    <%= yield %>
-  </body>
+<head>
+  <title>Web</title>
+  <link href="posts_app/stylesheets/application.css" media="all" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="posts_app/stylesheets/bootstrap.min.css">
+</head>
+<body>
+<%= logged_user.name if signed_in %>
+  <%= yield %>
+</body>
 </html>

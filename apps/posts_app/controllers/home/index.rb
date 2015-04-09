@@ -5,18 +5,22 @@ module PostsApp::Controllers::Home
     include Lotus::Controller
     include PostsApp::Action
     include Lotus::Action::Session
-    include PostsApp::Authenticable
+    include SampleApp::Authenticable
 
     expose(:posts)
     expose(:logged_user)
+    expose(:signed_in)
 
     def call(params)
-      @posts = PostRepository.all
+      @posts = current_user ? PostRepository.find_by_user_id(current_user.id) : nil
     end
 
     def logged_user
-      @logged_user = @logged_user || current_user
+      current_user
     end
 
+    def signed_in
+      user_signed_in
+    end
   end
 end

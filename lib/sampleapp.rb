@@ -32,3 +32,30 @@ Lotus::Model.configure do
   # Alternatively, you can use a block syntax like the following:
   #
 end.load!
+
+
+
+module SampleApp
+  module Authenticable
+    def self.included(base)
+      base.class_eval do
+    include Lotus::Action::Session
+        # before :authenticate!
+
+        def current_user
+          @current_user ||=  UserRepository.find_by_remember_token(session[:user]) if session[:user]
+        end
+
+        def user_signed_in
+          @user_signed_in = !!current_user if @user_signed_in.nil?
+          @user_signed_in
+        end
+
+        private
+        def authenticate!
+          halt 401 unless user_signed_in
+        end
+      end
+    end
+  end
+end
