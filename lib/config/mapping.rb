@@ -7,7 +7,7 @@ collection :users do
   attribute :email, String
   attribute :created_at, DateTime
   attribute :updated_at, DateTime
-  attribute :password_digest, String
   attribute :remember_token, String
+  attribute :password_digest, String
   attribute :admin, Boolean
 end

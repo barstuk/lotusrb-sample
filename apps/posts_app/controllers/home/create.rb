@@ -1,6 +1,10 @@
+require 'lotus/action/session'
+
 module PostsApp::Controllers::Home
   class Create
     include PostsApp::Action
+    include Lotus::Action::Session
+    include PostsApp::Authenticable
 
     def call(params)
       post = Post.new(title: params[:title], content: params[:content])

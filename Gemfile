@@ -11,6 +11,9 @@ group :test do
   gem 'minitest'
   gem 'capybara'
 end
+gem 'bcrypt-ruby'
+gem 'byebug', github: 'deivid-rodriguez/byebug', branch: 'master'
+gem 'rack-session-sequel'
 
 group :development, :test do
   gem 'pry-rails'

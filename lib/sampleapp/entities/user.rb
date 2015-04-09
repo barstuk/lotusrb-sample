@@ -1,12 +1,27 @@
-require 'lotus/validations'
+# require 'lotus/validations'
+require 'bcrypt'
 
 class User
   include Lotus::Entity
+  include BCrypt
   include Lotus::Validations
 
-  attribute :name, presence: true
-  attribute :email, presence: true
-  attributes :admin, :created_at, :updated_at, :password_digest, :remember_token
+  attribute :admin
+  attribute :created_at
+  attribute :updated_at
+  attribute :password_digest, presence: true, size: 4..64
+  attribute :remember_token
+  validates :name, presence: true
+  validates :email, presence: true, format: /\A(.*)@(.*)\.(.*)\z/
+
+  def password
+    @password ||= Password.new(password_digest)
+  end
+
+  def password=(new_password)
+    @password = Password.create(new_password)
+    self.password_digest = @password
+  end
 
   def admin?
     admin == true
@@ -14,6 +29,6 @@ class User
 
   def generate_token
     token = SecureRandom.urlsafe_base64
-    @remember_token = Digest::SHA1.hexdigest(token.to_s)
+    self.remember_token = Digest::SHA1.hexdigest(token.to_s)
   end
 end
