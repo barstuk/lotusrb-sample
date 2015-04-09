@@ -12,7 +12,7 @@ module PostsApp::Views::Home
     layout :application
 
     def button_to(method, title)
-      raw %(<button type="submit" class="btn btn-primary" formmethod=#{method}>#{title}</button>)
+      raw %(<button type="submit" class="btn btn-success" formmethod=#{method}>#{title}</button>)
     end
   end
 end

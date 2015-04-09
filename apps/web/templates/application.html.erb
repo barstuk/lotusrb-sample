@@ -1,0 +1,37 @@
+<!doctype HTML>
+<html>
+<head>
+  <title>Lotus app</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/pain.less.min.css" />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+</head>
+<body>
+  <header>
+    <div class="paddings">
+      <table style="width: 100%">
+        <tr>
+          <td style="text-align: left;"><a href="/posts_app">PostsApp</a></td>
+          <td style="text-align: right;" class="logo">
+          <a href="http://lotusrb.org"></a>
+          </td>
+          <td style="text-align: right;"><a href="/todos_app">TodosApp</a></td>
+        </tr>
+      </table>
+    </div>
+  </header>
+  <main>
+    <div class="paddings">
+      <article>
+        <%= yield %>
+      </article>
+    </div>
+  </main>
+  <footer>
+    <div class="paddings">
+      <p style="text-align: center;">
+      Created with lotusrb framework
+      </p>
+      </div>
+    </footer>
+  </body>
+  </html>

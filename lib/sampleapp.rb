@@ -20,6 +20,7 @@ Lotus::Model.configure do
   #
   adapter type: :sql, uri: DATABASE_URL
 
+
   ##
   # Database mapping
   #
@@ -32,8 +33,6 @@ Lotus::Model.configure do
   # Alternatively, you can use a block syntax like the following:
   #
 end.load!
-
-
 
 module SampleApp
   module Authenticable

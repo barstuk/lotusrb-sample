@@ -1,0 +1,1 @@
+get '/', to: 'static_page#index'

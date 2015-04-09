@@ -1,8 +1,13 @@
 <h1>Welcome to Lotus Todo App!</h1>
 
 <% if signed_in %>
-<% todos.each do |todo| %>
-<%= todo.name %><br>
+<br>
+Todo:<br>
+<% todos_todo.each do |todo| %>
+<form role="form" action="todos_app/<%= todo.id %>" method="post" >
+<%= todo.name %>
+  <%= button_to("post", "Mark as Done") %><br>
+</form>
 <% end %>
 <br>
 
@@ -19,11 +24,19 @@
 </div>
 </form>
 
-
+<br>
+Done:<br>
+<% todos_done.each do |todo| %>
+<form role="form" action="todos_app/<%= todo.id %>" method="post" >
+<%= todo.name %>
+<form role="form" action="todos_app/<%= todo.id %>" method="post" >
+  <%= button_to("post", "Mark as Undone") %><br>
+</form>
+<br>
 <form role="form" action="todos_app/logout" method="get" >
   <%= button_to("get", "Logout") %>
 </form>
-
+<% end %>
 
 <% else %>
 <form role="form" action="todos_app/sign_up" method="post" >

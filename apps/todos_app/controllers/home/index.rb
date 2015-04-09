@@ -7,13 +7,15 @@ module TodosApp::Controllers::Home
     include Lotus::Action::Session
     include SampleApp::Authenticable
 
-    expose(:todos)
+    expose(:todos_todo)
+    expose(:todos_done)
     expose(:logged_user)
     expose(:signed_in)
 
 
     def call(params)
-      @todos = TodoRepository.find_by_user_id(current_user.id)
+      @todos_todo = current_user ? TodoRepository.find_by_user_id_and_todo(current_user.id) : nil
+      @todos_done = current_user ? TodoRepository.find_by_user_id_and_done(current_user.id) : nil
     end
 
     def logged_user
