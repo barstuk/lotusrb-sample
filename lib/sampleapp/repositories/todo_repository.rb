@@ -5,17 +5,33 @@ class TodoRepository
   include Lotus::Repository
   extend Timestamps
 
-  def self.find_by_user_id_and_todo(user_id)
+  def self.find_by_user_id(user_id)
+    query do
+      where(user_id: user_id)
+    end
+  end
+
+  def self.find_by_user_id_todo(user_id)
     query do
       where(user_id: user_id, done: false)
     end
   end
 
-  def self.find_by_user_id_and_done(user_id)
+  def self.find_by_user_id_done(user_id)
     query do
       where(user_id: user_id, done: true)
     end
   end
 
+  def self.find_by_user_id_done_category(user_id, category)
+    query do
+      where(user_id: user_id, done: true, category: category)
+    end
+  end
 
+  def self.find_by_user_id_todo_category(user_id, category)
+    query do
+      where(user_id: user_id, done: false, category: category)
+    end
+  end
 end

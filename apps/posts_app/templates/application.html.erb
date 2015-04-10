@@ -1,8 +1,8 @@
 <!doctype HTML>
 <html>
 <head>
-  <title>Web</title>
-  <link href="posts_app/stylesheets/application.css" media="all" rel="stylesheet" type="text/css"/>
+  <title>Posts app</title>
+  <link rel="stylesheet" type="text/css" href="posts_app/stylesheets/application.css">
   <link rel="stylesheet" href="posts_app/stylesheets/bootstrap.min.css">
 </head>
 <body>
@@ -11,6 +11,8 @@
   <form role="form" action="posts_app/logout" method="get" id="logout" >
     <%= button_to("get", "Logout") %>
   </form>
+  <br><br>
+  <%= "Your Token: #{logged_user.remember_token}" %>
   <% end %>
   <%= yield %>
 </body>

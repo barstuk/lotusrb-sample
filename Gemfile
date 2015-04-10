@@ -7,13 +7,10 @@ gem 'lotusrb',       '0.3.0'
 gem 'lotus-model',   '~> 0.3'
 gem 'pg'
 gem 'lotus-postgres', '~> 0.1.0'
-group :test do
-  gem 'minitest'
-  gem 'capybara'
-end
 gem 'bcrypt-ruby'
 gem 'byebug', github: 'deivid-rodriguez/byebug', branch: 'master'
 gem 'rack-session-sequel'
+gem 'representative'
 
 group :development, :test do
   gem 'pry', '~> 0.10.1'
