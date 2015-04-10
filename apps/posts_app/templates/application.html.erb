@@ -6,7 +6,12 @@
   <link rel="stylesheet" href="posts_app/stylesheets/bootstrap.min.css">
 </head>
 <body>
-<%= logged_user.name if signed_in %>
+  <% if signed_in %>
+  <%= "Logged in as: #{logged_user.name.capitalize}" %>
+  <form role="form" action="posts_app/logout" method="get" id="logout" >
+    <%= button_to("get", "Logout") %>
+  </form>
+  <% end %>
   <%= yield %>
 </body>
 </html>

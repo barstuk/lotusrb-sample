@@ -122,9 +122,6 @@ module PostsApp
       # Specify sources for assets
       # The directory `public/` is added by default
       #
-      assets << [
-        'public/'
-      ]
 
       # Enabling serving assets
       # Defaults to false
@@ -146,7 +143,7 @@ module PostsApp
       #   * https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options
       #   * https://www.owasp.org/index.php/Clickjacking
       #
-      security.x_frame_options "DENY"
+      # security.x_frame_options "DENY"
 
       # Content-Security-Policy (CSP) is a HTTP header supported by modern browsers.
       # It determines trusted sources of execution for dynamic contents
@@ -179,7 +176,7 @@ module PostsApp
       #  * http://content-security-policy.com/
       #  * https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Using_Content_Security_Policy
       #
-      security.content_security_policy "default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self';"
+      # security.content_security_policy "default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self';"
 
       ##
       # FRAMEWORKS

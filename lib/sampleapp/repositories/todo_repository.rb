@@ -13,7 +13,7 @@ class TodoRepository
 
   def self.find_by_user_id_and_done(user_id)
     query do
-      where(user_id: user_id, done: false)
+      where(user_id: user_id, done: true)
     end
   end
 

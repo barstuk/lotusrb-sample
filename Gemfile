@@ -16,11 +16,17 @@ gem 'byebug', github: 'deivid-rodriguez/byebug', branch: 'master'
 gem 'rack-session-sequel'
 
 group :development, :test do
-  gem 'pry-rails'
+  gem 'pry', '~> 0.10.1'
   gem 'pry-doc'
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
   gem 'awesome_print'
+end
+
+group :test do
+  gem 'rspec', '~> 3.2.0'
+  gem 'factory_girl'
+  gem 'database_cleaner', '~> 1.4.1'
 end
 
 group :production do

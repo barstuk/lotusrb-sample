@@ -19,10 +19,6 @@
 </div>
 </form>
 
-<form role="form" action="posts_app/logout" method="get" >
-  <%= button_to("get", "Logout") %>
-</form>
-
 <% else %>
 <form role="form" action="posts_app/sign_up" method="post" >
  <div class="form-group">
@@ -38,7 +34,6 @@
   <input type="password" name="password" >
 </div>
 <%= button_to("post", "Sign up") %>
-</div>
 </form>
 
 <form role="form" action="posts_app/login" method="post" >
@@ -51,6 +46,5 @@
   <input type="password" name="password" >
 </div>
 <%= button_to("post", "Log in") %>
-</div>
 </form>
 <% end %>

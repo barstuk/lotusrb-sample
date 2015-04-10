@@ -7,6 +7,7 @@ module TodosApp::Controllers::Sessions
     include Lotus::Action::Session
 
     def call(params)
+      byebug
       user = UserRepository.find_by_email(params[:email])
       if user.password == params[:password]
         session[:user] = user.remember_token
@@ -33,6 +34,7 @@ module TodosApp::Controllers::Sessions
     include Lotus::Action::Session
 
     def call(params)
+      byebug
       user = User.new(email: params[:email], name: params[:name])
       user.password = params[:password]
       if user.valid?

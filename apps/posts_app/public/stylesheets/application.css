@@ -15,3 +15,8 @@
 input, label, textarea {
     display: block;
 }
+
+#logout{
+ display: inline;
+ margin-left: 10px;
+}
