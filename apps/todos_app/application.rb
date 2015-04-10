@@ -119,11 +119,7 @@ module TodosApp
       #
 
       # Specify sources for assets
-      # The directory `public/` is added by default
-      #
-      # assets << [
-      #   'vendor/javascripts'
-      # ]
+
 
       # Enabling serving assets
       # Defaults to false

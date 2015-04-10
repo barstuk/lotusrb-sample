@@ -46,4 +46,19 @@ module PostsApp::Controllers::Sessions
       redirect_to '/posts_app'
     end
   end
+
+  class Changetoken
+    include SampleApp::Authenticable
+    include Lotus::Controller
+    include PostsApp::Action
+    include Lotus::Action::Session
+
+    def call(params)
+      redirect_to '/posts_app' unless session[:user]
+      user = UserRepository.find_by_remember_token(session[:user])
+      user = user.reset_token!
+      session[:user] = user.remember_token
+      redirect_to '/posts_app'
+    end
+  end
 end

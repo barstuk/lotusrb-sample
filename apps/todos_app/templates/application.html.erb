@@ -2,17 +2,27 @@
 <html>
 <head>
   <title>Todos App</title>
-  <link rel="stylesheet" type="text/css" href="posts_app/stylesheets/application.css">
-  <link rel="stylesheet" href="posts_app/stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="todos_app/stylesheets/application.css">
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <script src="/../javascripts/jquery-2.1.3.min.js"></script>
+  <script src="todos_app/javascripts/application.js"></script>
 </head>
 <body>
   <% if signed_in %>
   <%= "Logged in as: #{logged_user.name.capitalize}" %>
-  <form role="form" action="posts_app/logout" method="get" id="logout" >
+  <form role="form" action="todos_app/logout" method="get" id="logout" >
     <%= button_to("get", "Logout") %>
   </form>
   <br><br>
-  <%= "Your Token: #{logged_user.remember_token}" %>
+  Your Token:
+  <button type="submit" id="toggleToken" class="btn btn-warning">Show Token</button>
+  <div id="token">
+    <%= logged_user.remember_token %>
+    <form role="form" action="todos_app/change_token" method="post" >
+      <%= button_to("post", "Change Token") %>
+    </form>
+  </div>
+  <br>
   <% end %>
   <%= yield %>
 </body>

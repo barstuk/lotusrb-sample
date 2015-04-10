@@ -123,6 +123,10 @@ module PostsApp
       # The directory `public/` is added by default
       #
 
+      assets << [
+        '../../public/javascripts'
+      ]
+
       # Enabling serving assets
       # Defaults to false
       #

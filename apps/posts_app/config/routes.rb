@@ -7,6 +7,7 @@
 # # Please, uncomment the following line to have a working example.
 get '/', to: 'home#index'
 post '/', to: 'home#create'
+post 'change_token', to: 'sessions#changetoken'
 post 'sign_up', to: 'sessions#signup'
 post 'login', to: 'sessions#login'
 get 'logout', to: 'sessions#logout'

@@ -12,8 +12,15 @@
  *= require_self
  *= require_tree .
  */
+input, label, textarea {
+    display: block;
+}
 
+#logout{
+ display: inline;
+ margin-left: 10px;
+}
 
- body{
-  width: 20%;
- }
+div#token{
+  display: none;
+}

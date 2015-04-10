@@ -16,9 +16,10 @@ class UserRepository
     end.first
   end
 
-    def self.find_by_remember_token(remember_token)
+  def self.find_by_remember_token(remember_token)
     query do
       where(remember_token: remember_token)
     end.first
   end
+
 end

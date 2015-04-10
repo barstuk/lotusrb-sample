@@ -31,4 +31,15 @@ class User
     token = SecureRandom.urlsafe_base64
     self.remember_token = Digest::SHA1.hexdigest(token.to_s)
   end
+
+  def reset_token!
+    loop do
+      token = SecureRandom.urlsafe_base64
+      new_remember_token =  Digest::SHA1.hexdigest(token.to_s)
+      unless UserRepository.find_by_remember_token(new_remember_token)
+        break self.remember_token = new_remember_token
+      end
+    end
+    UserRepository.update(self)
+  end
 end
