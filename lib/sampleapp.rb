@@ -3,7 +3,6 @@ require 'lotus/model'
 require 'lotus/model/adapters/sql_adapter'
 
 Dir["#{ __dir__ }/sampleapp/**/*.rb"].each { |file| require_relative file }
-DATABASE_URL = 'postgres://adam:nowe@localhost/sampleapp_development'
 
 Lotus::Model.configure do
   # Database adapter
@@ -18,7 +17,7 @@ Lotus::Model.configure do
   #    adapter type: :sql, uri: 'postgres://localhost/sampleapp_development'
   #    adapter type: :sql, uri: 'mysql://localhost/sampleapp_development'
   #
-  adapter type: :sql, uri: DATABASE_URL
+  adapter type: :sql, uri:  ENV['SAMPLEAPP_DATABASE_URL']
 
 
   ##

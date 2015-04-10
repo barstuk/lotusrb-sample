@@ -5,7 +5,7 @@
   <div class="col-md-4">
     <p style="text-align: center; font-size: 20px">Todo:</p>
     <% todos_todo.each do |todo| %>
-    <form role="form" action="todos_app/<%= todo.id %>" method="post" >
+    <form role="form" action="todos_app/todos/<%= todo.id %>" method="post" >
       <div class="col-md-6" style="margin-bottom: 5px;">
         <%= todo.name %> <%= "(#{todo.category})" unless todo.category.empty? %>
       </div>
@@ -19,7 +19,7 @@
   <div class="col-md-4">
     <p style="text-align: center; font-size: 20px">Done:</p>
     <% todos_done.each do |todo| %>
-    <form role="form" action="todos_app/<%= todo.id %>" method="post" >
+    <form role="form" action="todos_app/todos/<%= todo.id %>" method="post" >
       <div class="col-md-6" style="margin-bottom: 5px;">
         <%= todo.name %> <%= "(#{todo.category})" unless todo.category.empty? %>
       </div>

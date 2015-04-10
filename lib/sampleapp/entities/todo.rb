@@ -10,12 +10,11 @@ class Todo
   attribute :user_id
   attribute :category
 
-  def toggle_done(t)
-    byebug
-    @todo = current_user ? (@t if @t.user_id == current_user.id) : nil
-    if @todo
-      @todo.done ^= true
-      TodoRepository.update(@todo)
+  def toggle_done(user)
+    update = user ? (true if self.user_id == user.id) : false
+    if update
+      self.done ^= true
+      TodoRepository.update(self)
     end
   end
 end

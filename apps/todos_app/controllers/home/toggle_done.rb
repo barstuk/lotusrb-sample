@@ -6,17 +6,9 @@ module TodosApp::Controllers::Home
     include SampleApp::Authenticable
 
     def call(params)
-      @t = TodoRepository.find(params[:id].to_i)
-      toggle_done(@t) if @t
+      @todo = TodoRepository.find(params[:id].to_i)
+      @todo.toggle_done(current_user) if @todo
       redirect_to '/todos_app'
     end
-
-    # def toggle_done(t)
-    #   @todo = current_user ? (@t if @t.user_id == current_user.id) : nil
-    #   if @todo
-    #     @todo.done ^= true
-    #     TodoRepository.update(@todo)
-    #   end
-    # end
   end
 end
