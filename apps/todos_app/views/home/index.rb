@@ -3,11 +3,6 @@ require 'lotus/action/session'
 module TodosApp::Views::Home
   class Index
     include TodosApp::View
-    include SampleApp::Authenticable
-    include Lotus::Helpers
-    include Lotus::Helpers::HtmlHelper
-    include Lotus::Action::Session
-    include Lotus::Controller
 
     layout :application
 

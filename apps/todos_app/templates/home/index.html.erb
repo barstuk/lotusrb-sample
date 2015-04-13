@@ -1,22 +1,11 @@
 <h1 style="text-align: center;">Welcome to Lotus Todo App!</h1>
 
 <% if signed_in %>
-<%= "Logged in as: #{logged_user.name.capitalize}" %>
-<form role="form" action="todos_app/logout" method="get" id="logout" >
-  <%= button_to("get", "Logout") %>
-</form>
-<br><br>
-Your Token:
-<button type="submit" id="toggleToken" class="btn btn-warning">Show Token</button>
-<div id="token">
-  <%= logged_user.remember_token %>
-  <form role="form" action="todos_app/change_token" method="post" >
-    <%= button_to("post", "Change Token") %>
-  </form>
-</div>
+<%= render partial: "logged" %>
 <br><br><br><br>
 <div class="row">
   <div class="col-md-4">
+    <% if todos_todo.any? %>
     <p style="text-align: center; font-size: 20px">Todo:</p>
     <% todos_todo.each do |todo| %>
     <form role="form" action="todos_app/todos/<%= todo.id %>" method="post" >
@@ -28,9 +17,11 @@ Your Token:
       </div>
     </form>
     <% end %>
+    <% end %>
   </div>
 
   <div class="col-md-4">
+    <% if todos_done.any? %>
     <p style="text-align: center; font-size: 20px">Done:</p>
     <% todos_done.each do |todo| %>
     <form role="form" action="todos_app/todos/<%= todo.id %>" method="post" >
@@ -42,6 +33,7 @@ Your Token:
       </div>
     </form>
     <br>
+    <% end %>
     <% end %>
   </div>
   <div class="col-md-4">
@@ -58,34 +50,6 @@ Your Token:
    </form>
  </div>
 </div>
-
 <% else %>
-<form role="form" action="todos_app/sign_up" method="post" >
- <div class="form-group">
-   Email:
-   <input type="text" name="email">
- </div>
- <div class="form-group">
-   Name:
-   <input type="text" name="name">
- </div>
- <div class="form-group">
-  Password:
-  <input type="password" name="password" >
-</div>
-<%= button_to("post", "Sign up") %>
-</form>
-
-
-<form role="form" action="todos_app/login" method="post" >
- <div class="form-group">
-   Email:
-   <input type="text" name="email">
- </div>
- <div class="form-group">
-  Password:
-  <input type="password" name="password" >
-</div>
-<%= button_to("post", "Log in") %>
-</form>
+<%= render partial: "session" %>
 <% end %>

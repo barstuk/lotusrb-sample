@@ -1,0 +1,13 @@
+<%= "Logged in as: #{logged_user.name.capitalize}" %>
+<form role="form" action="posts_app/logout" method="get" id="logout" >
+  <%= button_to("get", "Logout") %>
+</form>
+<br><br>
+Your Token:
+<button type="submit" id="toggleToken" class="btn btn-warning">Show Token</button>
+<div id="token">
+  <%= logged_user.remember_token %>
+  <form role="form" action="posts_app/change_token" method="post" >
+    <%= button_to("post", "Change Token") %>
+  </form>
+</div>

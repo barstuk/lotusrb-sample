@@ -39,6 +39,8 @@ function showData(data){
   $.each(data, function(i) {
     array.push(data[i].name)
   });
-  swal("You have Some Posts Todo: ", array.join(", "));
+  if(array.length > 0){
+    swal("You have Some Posts Todo: ", array.join(", "));
+  }
 }
 

@@ -28,7 +28,6 @@ module PostsApp::Controllers::Sessions
   end
 
   class Signup
-    include SampleApp::Authenticable
     include Lotus::Controller
     include PostsApp::Action
     include Lotus::Action::Session
@@ -48,7 +47,6 @@ module PostsApp::Controllers::Sessions
   end
 
   class Changetoken
-    include SampleApp::Authenticable
     include Lotus::Controller
     include PostsApp::Action
     include Lotus::Action::Session
