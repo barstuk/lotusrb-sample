@@ -18,6 +18,6 @@ module Timestamps
 
   def set_timestamps(entity)
     entity.created_at ||= Time.now
-    entity.updated_at ||= Time.now
+    entity.updated_at = Time.now
   end
 end
