@@ -1,10 +1,29 @@
-<h1>Welcome to Lotus Posts App!</h1>
+
+<h1 style="text-align: center;">Welcome to Lotus Post App!</h1>
 
 <% if signed_in %>
-<% posts.each do |post| %>
-<%= post.title %><br>
+<script>
+  var data = getData("<%=logged_user.remember_token%>")
+  showData(data);
+</script>
+<%= "Logged in as: #{logged_user.name.capitalize}" %>
+<form role="form" action="posts_app/logout" method="get" id="logout" >
+  <%= button_to("get", "Logout") %>
+</form>
+<br><br>
+Your Token:
+<button type="submit" id="toggleToken" class="btn btn-warning">Show Token</button>
+<div id="token">
+  <%= logged_user.remember_token %>
+  <form role="form" action="posts_app/change_token" method="post" >
+    <%= button_to("post", "Change Token") %>
+  </form>
+</div>
+<br><br><br><br>
+<% posts.each_with_index do |post, index| %>
+<%= "#{index +1}) #{post.title}" %><br>
+<%= post.content %><br>
 <% end %>
-<br>
 
 <form role="form" action="posts_app" method="post" >
  <div class="form-group">

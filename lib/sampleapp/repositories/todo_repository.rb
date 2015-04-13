@@ -34,4 +34,16 @@ class TodoRepository
       where(user_id: user_id, done: false, category: category)
     end
   end
+
+  def self.find_by_user_id_todo_category_name(user_id, category)
+    query do
+      where(user_id: user_id, done: false, category: category)
+    end
+  end
+
+  def self.find_by_user_id_todo_category_name_name(user_id, category, name)
+    query do
+      where(user_id: user_id, done: false, category: category, name: name)
+    end
+  end
 end
