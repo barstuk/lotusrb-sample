@@ -2,9 +2,7 @@ require 'lotus/action/session'
 
 module PostsApp::Controllers::Sessions
   class Login
-    include Lotus::Controller
     include PostsApp::Action
-    include Lotus::Action::Session
 
     def call(params)
       redirect_to '/posts_app' if (params[:email].empty? || params[:password].empty?)
@@ -19,7 +17,6 @@ module PostsApp::Controllers::Sessions
   class Logout
     include Lotus::Controller
     include PostsApp::Action
-    include Lotus::Action::Session
 
     def call(params)
       session[:user] = nil
@@ -28,9 +25,7 @@ module PostsApp::Controllers::Sessions
   end
 
   class Signup
-    include Lotus::Controller
     include PostsApp::Action
-    include Lotus::Action::Session
 
     def call(params)
       redirect_to '/posts_app' if (params[:email].empty? || params[:password].empty? || params[:name].empty?)
@@ -47,9 +42,7 @@ module PostsApp::Controllers::Sessions
   end
 
   class Changetoken
-    include Lotus::Controller
     include PostsApp::Action
-    include Lotus::Action::Session
 
     def call(params)
       redirect_to '/posts_app' unless session[:user]

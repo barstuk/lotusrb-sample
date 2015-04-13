@@ -3,7 +3,6 @@ require 'lotus/action/session'
 module PostsApp::Controllers::Home
   class Create
     include PostsApp::Action
-    include Lotus::Action::Session
     include SampleApp::Authenticable
 
     def call(params)

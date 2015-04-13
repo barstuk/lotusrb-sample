@@ -2,9 +2,7 @@ require 'lotus/action/session'
 
 module TodosApp::Controllers::Sessions
   class Login
-    include Lotus::Controller
     include TodosApp::Action
-    include Lotus::Action::Session
 
     def call(params)
       redirect_to '/todos_app' if (params[:email].empty? || params[:password].empty?)
@@ -17,9 +15,7 @@ module TodosApp::Controllers::Sessions
   end
 
   class Logout
-    include Lotus::Controller
     include TodosApp::Action
-    include Lotus::Action::Session
 
     def call(params)
       session[:user] = nil
@@ -28,9 +24,7 @@ module TodosApp::Controllers::Sessions
   end
 
   class Signup
-    include Lotus::Controller
     include TodosApp::Action
-    include Lotus::Action::Session
 
     def call(params)
       redirect_to '/todos_app' if (params[:email].empty? || params[:password].empty? || params[:name].empty?)
@@ -47,9 +41,7 @@ module TodosApp::Controllers::Sessions
   end
 
   class Changetoken
-    include Lotus::Controller
     include TodosApp::Action
-    include Lotus::Action::Session
 
     def call(params)
       redirect_to '/todos_app' unless session[:user]

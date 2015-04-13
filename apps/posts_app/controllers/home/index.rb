@@ -2,9 +2,7 @@ require 'lotus/action/session'
 
 module PostsApp::Controllers::Home
   class Index
-    include Lotus::Controller
     include PostsApp::Action
-    include Lotus::Action::Session
     include SampleApp::Authenticable
 
     expose(:posts)

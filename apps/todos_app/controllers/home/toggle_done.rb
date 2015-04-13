@@ -2,7 +2,6 @@ require 'lotus/action/session'
 module TodosApp::Controllers::Home
   class ToggleDone
     include TodosApp::Action
-    include Lotus::Action::Session
     include SampleApp::Authenticable
 
     def call(params)

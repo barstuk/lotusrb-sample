@@ -2,9 +2,7 @@ require 'lotus/action/session'
 
 module TodosApp::Controllers::Home
   class Index
-    include Lotus::Controller
     include TodosApp::Action
-    include Lotus::Action::Session
     include SampleApp::Authenticable
 
     expose(:todos_todo)

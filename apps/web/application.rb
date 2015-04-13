@@ -94,7 +94,7 @@ module Web
       #                         'postgres://localhost/bookshelf'
       #                         'mysql://localhost/bookshelf'
       #
-      adapter type: :sql, uri: ENV['POSTSAPP_DATABASE_URL']
+      adapter type: :sql, uri: ENV['SAMPLEAPP_DATABASE_URL']
 
       # adapter type: :file_system, uri: ENV['WEB_DATABASE_URL']
 

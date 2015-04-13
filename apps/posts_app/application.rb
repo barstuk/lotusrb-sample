@@ -191,6 +191,7 @@ module PostsApp
       #
       # See: http://www.rubydoc.info/gems/lotus-controller#Configuration
       controller.prepare do
+        include Lotus::Action::Session
         # include MyAuthentication # included in all the actions
         # before :authenticate!    # run an authentication before callback
       end

@@ -50,6 +50,7 @@ module SampleApp
         end
 
         private
+
         def authenticate!
           halt 401 unless user_signed_in
         end

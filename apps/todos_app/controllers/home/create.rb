@@ -3,7 +3,6 @@ require 'lotus/action/session'
 module TodosApp::Controllers::Home
   class Create
     include TodosApp::Action
-    include Lotus::Action::Session
     include SampleApp::Authenticable
 
     def call(params)
