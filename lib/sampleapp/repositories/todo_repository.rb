@@ -11,39 +11,27 @@ class TodoRepository
     end
   end
 
-  def self.find_by_user_id_todo(user_id)
+  def self.find_by_todo
     query do
-      where(user_id: user_id, done: false)
+      where(done: false)
     end
   end
 
-  def self.find_by_user_id_done(user_id)
+  def self.find_by_done
     query do
-      where(user_id: user_id, done: true)
+      where(done: true)
     end
   end
 
-  def self.find_by_user_id_done_category(user_id, category)
+  def self.find_by_category(category)
     query do
-      where(user_id: user_id, done: true, category: category)
+      where(category: category)
     end
   end
 
-  def self.find_by_user_id_todo_category(user_id, category)
+  def self.find_by_name(name)
     query do
-      where(user_id: user_id, done: false, category: category)
-    end
-  end
-
-  def self.find_by_user_id_todo_category_name(user_id, category)
-    query do
-      where(user_id: user_id, done: false, category: category)
-    end
-  end
-
-  def self.find_by_user_id_todo_category_name_name(user_id, category, name)
-    query do
-      where(user_id: user_id, done: false, category: category, name: name)
+      where(name: name)
     end
   end
 end

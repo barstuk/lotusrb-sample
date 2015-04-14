@@ -9,7 +9,7 @@ module ApiV1
         def call(params)
           token = @_env["HTTP_X_USER_ACCESS_TOKEN"]
           user = set_user(token)
-          todos = TodoRepository.find_by_user_id_todo(user.id)
+          todos = TodoRepository.find_by_user_id(user.id).find_by_todo
           self.body = ApiV1::Presenters::Todos::Main.new(todos).render
         end
       end
