@@ -11,7 +11,7 @@ class Todo
   attribute :category
 
   def toggle_done(user)
-    update = user ? (true if self.user_id == user.id) : false
+    update = user ? user_id == user.id : false
     if update
       self.done ^= true
       TodoRepository.update(self)
